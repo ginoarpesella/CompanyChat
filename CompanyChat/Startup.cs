@@ -39,7 +39,10 @@ namespace CompanyChat
             }
 
             app.UseStaticFiles();
-            app.UseSignalR();
+            app.UseFileServer();
+            app.UseSignalR(routes => {
+                routes.MapHub<Hubs.GoatingHub>("goatingChat");
+            });
 
             app.UseMvc(routes =>
             {

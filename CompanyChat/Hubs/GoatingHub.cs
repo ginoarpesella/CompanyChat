@@ -11,30 +11,30 @@ namespace CompanyChat.Hubs
     {
         public void Connected()
         {
-            Clients.All.connected($"{GetUserName()} is now watching.");
+            Clients.All.InvokeAsync("connected", ($"{GetUserName()} is now watching."));
         }
 
         public void Disconnect()
         {
-            Clients.All.disconnected($"{GetUserName()} has left.");
+            Clients.All.InvokeAsync("disconnected", ($"{GetUserName()} has left."));
         }
 
         public void GoatingServer(string msg)
         {
-            Clients.All.myClientListener($"Hello: {msg}");
+            Clients.All.InvokeAsync("myClientListener", ($"Hello: {msg}"));
         }
 
         // this will return the name of the chat server just to the caller
-        public void ChatName() { Clients.Caller.chatName("zz_Goating"); }
+        public void ChatName() { Clients.Client(Context.ConnectionId).InvokeAsync("chatName", ("zz_Goating")); }
 
         public void SendMessage(string msg)
         {
-            Clients.All.receiveMessage($"{GetUserName()}: {msg}");
+            Clients.AllExcept(new string[] { Context.ConnectionId }).InvokeAsync("receiveMessage", ($"{GetUserName()}: {msg}"));
         }
 
         public void MyName()
         {
-            Clients.Caller.myName($"{GetUserName()}");
+            Clients.Client(Context.ConnectionId).InvokeAsync("myName", ($"{GetUserName()}"));
         }
 
         private string GetUserName()

@@ -78,8 +78,13 @@
     background-color: lightslategrey;
 }
 
-.message-received-time {
+message-sent-text {
+
+}
+
+.message-time {
     font-size: 9px;
+    color: darkgray;
 }
 
 .message-new-member {

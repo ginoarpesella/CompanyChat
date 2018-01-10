@@ -1,17 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Speak Up!";
 }
-<div class="main-contianer">
-    <div class="main-chat-container">
-        <div id="main-chat-title" class="main-chat-title"></div>
-        <div id="chat-window"></div>
-        <div class="message-sender-container">
-            <div class="message-sender">
-                <div><textarea type="text" rows="5" cols="60" id="message-box" class="message-box"></textarea></div>
-                <div><input type="button" id="message-send" class="message-send btn btn-primary" value="Send" /></div>
-            </div>
-        </div>
+
+<h1 id="main-chat-title" class="main-chat-title"></h1>
+<div class="main-contianer shadow">
+    <div id="chat-scroll" class="main-chat-container">
+        <div id="chat-window" class="chat-window"></div>
+    </div>
+    <hr style="margin: 15px;" />
+    <div class="message-sender-container">
+        <div class="form-group"><textarea type="text" rows="2" id="message-box" class="message-box form-control" placeholder="Type stuff here! :)"></textarea></div>
     </div>
 </div>
-<div><a href="https://radu-matei.com/blog/signalr-core/">Read about SignalR here.</a></div>
-<div><a href="https://github.com/davidfowl/SignalRCoreAlphaSample">Read about SignalR here.</a></div>
+
+

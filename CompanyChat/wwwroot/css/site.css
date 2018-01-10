@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 70px;
+    background-color: #2d2d2d;
 }
 
 /* Wrapping element */
@@ -8,6 +9,33 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    color: aliceblue;
+}
+
+h1 {
+    color: #c4c4c4;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 64px;
+    margin: 0 0 0;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+a {
+    color: #e2c653;
+}
+
+a:focus {
+    color: #e2c653;
+}
+
+a:hover {
+    color: #e2c653;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Carousel */
@@ -26,6 +54,14 @@
     margin: 15px;
 }
 
+.footer {
+    background-color: #222;
+    border-color: #080808;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
@@ -38,48 +74,57 @@
     text-align: center;
     align-content: center;
     height: 100%;
+    width: 700px;
+    border-radius: 7px;
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .main-chat-container {
+    font-family: "Lucida Sans Unicode";
     width: 100%;
-    height: 100%;
-    max-width: 750px;
-    border: dashed;
-    border-color: red;
+    height: 400px;
+    margin: 25px 3px 25px 3px;
+    padding: 15px 20px 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-/* message sender box */
-.message-sender {
-
-}
-
-.message-box {
-    width: 100%;
-    text-align: left;
-    height: 70px;
-    max-width: 400px;
-}
-
-.message-send {
+.chat-window {
     
 }
 
-.message-received {
-    text-align: right;
-    width: 100%;
-    font-size: 14px;
-    background-color: aquamarine;
+.shadow {
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
 }
 
-.message-sent {
+/* message sender box */
+.message-box {
+    width: 90%;
+    height: 70px;
+    color: #232323;
+    margin-left: 5%;
+    resize: none;
+}
+
+.message-received {
     text-align: left;
     width: 100%;
     font-size: 14px;
-    background-color: lightslategrey;
+    margin-right: 12px;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: inline-block;
 }
 
-message-sent-text {
+.message-received-text {
+    word-wrap: break-word;
+}
 
+.message-received-text i {
+    margin-right: 4px;
 }
 
 .message-time {
@@ -91,4 +136,17 @@ message-sent-text {
     text-align: center;
     font-size: 12px;
     color: darkgray;
+}
+
+.buffer {
+    width: 100%;
+    height: 100%;
+}
+
+.buffer-left {
+    float: left;
+}
+
+.buffer-right {
+    float: right;
 }

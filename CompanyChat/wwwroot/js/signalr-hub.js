@@ -22,9 +22,9 @@ var singnalr_hub_module = function () {
 
         // bind incoming messages to functions
         connection.on('connected', function (msg) { addRemoveMemberToChat(msg); });
-        connection.on('chatName', function (msg) { $('#main-chat-title').text(msg); })
+        connection.on('chatName', function(msg) { $('#main-chat-title').text(msg); });
         connection.on('receiveMessage', function (msg) { addToChat(msg); });
-        connection.on('disconnected', function (msg) { addRemoveMemberToChat(msg); })
+        connection.on('disconnected', function(msg) { addRemoveMemberToChat(msg); });
         connection.on('myName', function (msg) { myName = msg; });
 
         connection.start().then(function () {
